@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "time-spent-web",
+  base: "/time-spent-web/",
   plugins: [
     react(),
     tailwindcss(),
