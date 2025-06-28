@@ -6,18 +6,16 @@ import { ConfigCatProvider } from "configcat-react";
 import { HeroUIProvider } from '@heroui/react'
 import { Auth0Provider } from '@auth0/auth0-react';
 
-const configCatKey = "configcat-sdk-1/TbXdCMZii0WKnjpSmmWNKw/q328WyZg5USrnPo9dLcD_A";
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Auth0Provider
-      domain="dev-f6vjtxopx4qxeo3j.us.auth0.com"
-      clientId="XOXBVdGsUmhis657stHeCfTwhgcHRU0O"
+      domain={import.meta.env.VITE_AUTH0_DOMAIN}
+      clientId={import.meta.env.VITE_AUTH0_CLIENT_ID}
       authorizationParams={{
         redirect_uri: window.location.origin
       }}
     >
-      <ConfigCatProvider sdkKey={configCatKey}>
+      <ConfigCatProvider sdkKey={import.meta.env.VITE_CONFIG_CAT_KEY}>
         <HeroUIProvider>
           <App />
         </HeroUIProvider>
