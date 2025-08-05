@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import LoginButton from "../login";
 import LogoutButton from "../logout";
 import Profile from "../profile";
@@ -7,7 +8,16 @@ function Sidebar() {
         <aside>
             <nav className="flex flex-col gap-3 h-full">
                 <ul className="h-full">
-                    <li><a href="#home">Home</a></li>
+                    <li>
+                        <NavLink to="/" >
+                            Home
+                        </NavLink >
+                    </li>
+                    <li>
+                        <NavLink to="/stats" >
+                            Stats
+                        </NavLink >
+                    </li>
                 </ul>
                 <div className="">
                     <Profile></Profile>
